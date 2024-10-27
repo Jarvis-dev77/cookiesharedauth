@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Authorized Layout</title>
+    <!-- Include necessary CSS, scripts, etc. -->
+</head>
+<body>
+    <header>
+        <!-- Navigation bar, logo, etc. -->
+        <h3>Welcome, @User.Identity.Name!</h3>
+        <form asp-controller="Account" asp-action="Logout" method="post" class="form-inline">
+            <button type="submit" class="btn btn-link text-dark">Logout</button>
+        </form>
+        <a class="nav-link text-dark" target="_blank" asp-area="" asp-controller="Account" asp-action="OpenApp">Redirect To App 2</a>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>
+    </header>
+
+    <div class="container">
+        @RenderBody() <!-- This renders the content of individual pages -->
+    </div>
+
+    <!-- Footer, additional scripts, etc. -->
+
+</body>
+</html>
